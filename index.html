@@ -50,19 +50,22 @@
             --accent-color: #06b6d4;
             --highlight-color: #f472b6;
             --success-color: #10b981;
-            --bg-dark: #0f172a;
-            --bg-darker: #020617;
-            --bg-card: rgba(15, 23, 42, 0.8);
-            --text-light: #e2e8f0;
-            --text-muted: #94a3b8;
-            --border-color: rgba(148, 163, 184, 0.2);
-            --border-glow: rgba(99, 102, 241, 0.3);
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #f1f5f9;
+            --bg-card: rgba(255, 255, 255, 0.9);
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --text-muted: #64748b;
+            --border-color: rgba(148, 163, 184, 0.3);
+            --border-glow: rgba(99, 102, 241, 0.2);
             --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             --gradient-accent: linear-gradient(135deg, var(--accent-color), var(--primary-color));
             --gradient-highlight: linear-gradient(135deg, var(--highlight-color), var(--secondary-color));
             --gradient-rainbow: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color), var(--highlight-color));
-            --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.3);
-            --shadow-card: 0 20px 40px rgba(0, 0, 0, 0.3);
+            --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.15);
+            --shadow-card: 0 20px 40px rgba(0, 0, 0, 0.08);
+            --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
 
         /* ========================================
@@ -74,8 +77,8 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-darker);
-            color: var(--text-light);
+            background: var(--bg-primary);
+            color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -86,7 +89,7 @@
         }
 
         ::-webkit-scrollbar-track {
-            background: var(--bg-darker);
+            background: var(--bg-secondary);
         }
 
         ::-webkit-scrollbar-thumb {
@@ -119,7 +122,7 @@
                 radial-gradient(circle at 20% 80%, var(--primary-color) 0%, transparent 40%),
                 radial-gradient(circle at 80% 20%, var(--secondary-color) 0%, transparent 40%),
                 radial-gradient(circle at 40% 40%, var(--accent-color) 0%, transparent 30%);
-            opacity: 0.08;
+            opacity: 0.05;
             animation: float 20s ease-in-out infinite;
         }
 
@@ -148,6 +151,7 @@
             top: 10%;
             left: -5%;
             animation-delay: 0s;
+            opacity: 0.15;
         }
 
         .shape:nth-child(2) {
@@ -157,6 +161,7 @@
             top: 60%;
             right: -3%;
             animation-delay: -5s;
+            opacity: 0.15;
         }
 
         .shape:nth-child(3) {
@@ -166,6 +171,7 @@
             bottom: 20%;
             left: 10%;
             animation-delay: -10s;
+            opacity: 0.15;
         }
 
         .shape:nth-child(4) {
@@ -175,6 +181,7 @@
             top: 30%;
             right: 15%;
             animation-delay: -7s;
+            opacity: 0.15;
         }
 
         @keyframes float {
@@ -198,7 +205,7 @@
             top: 0;
             width: 100%;
             backdrop-filter: blur(20px);
-            background: rgba(2, 6, 23, 0.9);
+            background: rgba(255, 255, 255, 0.9);
             border-bottom: 1px solid var(--border-color);
             z-index: 1000;
             transition: all 0.3s ease;
@@ -254,7 +261,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--text-light);
+            color: var(--primary-color);
         }
 
         .nav-links a::after {
@@ -314,15 +321,16 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: var(--bg-card);
+            background: var(--bg-primary);
             backdrop-filter: blur(20px);
             border: 1px solid var(--border-color);
             padding: 0.5rem 1rem;
             border-radius: 50px;
             font-size: 0.875rem;
-            color: var(--accent-color);
+            color: var(--primary-color);
             margin-bottom: 1.5rem;
             animation: fadeInDown 0.6s ease;
+            box-shadow: var(--shadow-sm);
         }
 
         .hero-badge .pulse {
@@ -362,7 +370,7 @@
 
         .hero .subtitle {
             font-size: clamp(1.25rem, 3vw, 1.75rem);
-            color: var(--text-muted);
+            color: var(--text-secondary);
             margin-bottom: 1rem;
             animation: fadeInUp 0.6s ease 0.4s both;
         }
@@ -457,7 +465,7 @@
 
         .btn-secondary {
             background: transparent;
-            color: var(--text-light);
+            color: var(--text-primary);
             border: 2px solid var(--border-color);
             backdrop-filter: blur(10px);
         }
@@ -495,7 +503,7 @@
 
         .scroll-indicator i {
             font-size: 1.5rem;
-            color: var(--text-muted);
+            color: var(--primary-color);
         }
 
         @keyframes bounce {
@@ -536,7 +544,7 @@
            Projects Section
         ======================================== */
         .projects {
-            background: var(--bg-dark);
+            background: var(--bg-secondary);
             padding: 6rem 0;
         }
 
@@ -556,10 +564,10 @@
         }
 
         .filter-btn {
-            background: var(--bg-card);
+            background: var(--bg-primary);
             backdrop-filter: blur(10px);
             border: 1px solid var(--border-color);
-            color: var(--text-muted);
+            color: var(--text-secondary);
             padding: 0.6rem 1.25rem;
             border-radius: 50px;
             font-size: 0.875rem;
@@ -584,13 +592,14 @@
 
         /* Project Card */
         .project-card {
-            background: var(--bg-card);
+            background: var(--bg-primary);
             backdrop-filter: blur(20px);
             border: 1px solid var(--border-color);
             border-radius: 24px;
             overflow: hidden;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
+            box-shadow: var(--shadow-sm);
         }
 
         .project-card::before {
@@ -617,7 +626,7 @@
         /* Project Image/Preview */
         .project-preview {
             height: 180px;
-            background: var(--bg-darker);
+            background: var(--bg-tertiary);
             position: relative;
             overflow: hidden;
             border-bottom: 1px solid var(--border-color);
@@ -672,7 +681,7 @@
             font-size: 1.35rem;
             font-weight: 700;
             margin-bottom: 0.75rem;
-            color: var(--text-light);
+            color: var(--text-primary);
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -694,7 +703,7 @@
         }
 
         .tech-tag {
-            background: rgba(99, 102, 241, 0.15);
+            background: rgba(99, 102, 241, 0.1);
             color: var(--primary-color);
             padding: 0.3rem 0.75rem;
             border-radius: 20px;
@@ -707,7 +716,7 @@
         }
 
         .tech-tag:hover {
-            background: rgba(99, 102, 241, 0.25);
+            background: rgba(99, 102, 241, 0.2);
             transform: scale(1.05);
         }
 
@@ -725,8 +734,8 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: var(--bg-darker);
-            color: var(--text-muted);
+            background: var(--bg-tertiary);
+            color: var(--text-secondary);
             padding: 0.6rem 1rem;
             border-radius: 10px;
             text-decoration: none;
@@ -737,9 +746,9 @@
         }
 
         .project-link:hover {
-            color: var(--text-light);
+            color: var(--primary-color);
             border-color: var(--primary-color);
-            background: rgba(99, 102, 241, 0.1);
+            background: rgba(99, 102, 241, 0.05);
         }
 
         .project-link i {
@@ -798,18 +807,19 @@
         }
 
         .skill-tag {
-            background: var(--bg-card);
+            background: var(--bg-primary);
             backdrop-filter: blur(20px);
             border: 1px solid var(--border-color);
             padding: 0.5rem 1rem;
             border-radius: 8px;
-            color: var(--text-light);
+            color: var(--text-primary);
             font-weight: 500;
             font-size: 0.875rem;
             display: flex;
             align-items: center;
             gap: 0.4rem;
             transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
         }
 
         .skill-tag:hover {
@@ -832,7 +842,7 @@
         }
 
         .code-block {
-            background: var(--bg-darker);
+            background: var(--bg-secondary);
             border: 1px solid var(--border-color);
             border-radius: 16px;
             padding: 2rem;
@@ -852,7 +862,7 @@
             left: 0;
             right: 0;
             height: 40px;
-            background: var(--bg-card);
+            background: var(--bg-tertiary);
             border-bottom: 1px solid var(--border-color);
         }
 
@@ -864,6 +874,7 @@
             color: var(--text-muted);
             font-size: 10px;
             letter-spacing: 4px;
+            opacity: 0.6;
         }
 
         .code-content {
@@ -891,17 +902,17 @@
             to { opacity: 1; transform: translateX(0); }
         }
 
-        .keyword { color: var(--secondary-color); }
+        .keyword { color: var(--primary-color); }
         .string { color: var(--success-color); }
         .comment { color: var(--text-muted); font-style: italic; }
-        .property { color: var(--accent-color); }
-        .bracket { color: var(--highlight-color); }
+        .property { color: var(--secondary-color); }
+        .bracket { color: var(--text-secondary); }
 
         /* ========================================
            Contact Section
         ======================================== */
         .contact {
-            background: var(--bg-dark);
+            background: var(--bg-secondary);
             text-align: center;
         }
 
@@ -916,7 +927,7 @@
         }
 
         .contact-item {
-            background: var(--bg-card);
+            background: var(--bg-primary);
             backdrop-filter: blur(20px);
             border: 1px solid var(--border-color);
             border-radius: 20px;
@@ -925,6 +936,7 @@
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            box-shadow: var(--shadow-sm);
         }
 
         .contact-item::before {
@@ -961,7 +973,7 @@
         }
 
         .contact-item h3 {
-            color: var(--text-light);
+            color: var(--text-primary);
             margin-bottom: 0.5rem;
             font-size: 1.1rem;
             position: relative;
@@ -982,7 +994,7 @@
 
         /* Resume Download Card */
         .contact-item.resume-card {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));
             border-color: var(--primary-color);
         }
 
@@ -1014,7 +1026,7 @@
            Footer
         ======================================== */
         footer {
-            background: var(--bg-darker);
+            background: var(--bg-primary);
             padding: 2rem;
             text-align: center;
             border-top: 1px solid var(--border-color);
@@ -1035,7 +1047,7 @@
         }
 
         .footer-links a {
-            color: var(--text-muted);
+            color: var(--text-secondary);
             text-decoration: none;
             transition: color 0.3s ease;
         }
