@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Aiden Cox - Software Developer. Passionate about building applications that make a difference through clean code and creative solutions.">
-    <meta name="keywords" content="Aiden Cox, Software Developer, Web Developer, Portfolio, React, Python, TypeScript, Full Stack">
+    <meta name="keywords" content="Aiden Cox, Software Developer, Full-Stack Developer, Wright State, Python, TypeScript, React, Data Analytics, Portfolio">
     <meta name="author" content="Aiden Cox">
 
     <!-- Open Graph / Social Media -->
@@ -270,7 +270,6 @@
         }
 
         .hero-badge {
-            display: inline-flex;
             align-items: center;
             gap: 0.5rem;
             background: var(--bg-primary);
@@ -861,10 +860,111 @@
         .bracket { color: var(--text-secondary); }
 
         /* ========================================
+           Education & Experience Sections
+        ======================================== */
+        .timeline-section {
+            padding: 6rem 0;
+        }
+
+        .timeline-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .timeline-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .timeline-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-card);
+            border-color: var(--primary-color);
+        }
+
+        .timeline-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--gradient-primary);
+            border-radius: 4px 0 0 4px;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .timeline-company {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-top: 0.25rem;
+        }
+
+        .timeline-date {
+            background: rgba(13, 148, 136, 0.1);
+            color: var(--primary-color);
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .timeline-description {
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .timeline-skill {
+            background: var(--bg-tertiary);
+            color: var(--text-secondary);
+            padding: 0.3rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .education-section {
+            background: var(--bg-secondary);
+        }
+
+        /* ========================================
            Contact Section
         ======================================== */
         .contact {
-            background: var(--bg-secondary);
+            background: var(--bg-primary);
             text-align: center;
         }
 
@@ -1141,6 +1241,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <a href="#contact" class="nav-cta">
@@ -1161,8 +1262,8 @@
                     <span class="highlight">Software Developer</span>
                 </p>
                 <p class="description">
-                    I craft digital experiences with clean code and creative solutions.
-                    Passionate about building applications that make a difference.
+                    Obtained a B.S. in Computer Science at Wright State University Spring 2026
+                    with a 3.9 GPA. Passionate about building impactful software solutions and continuously learning new technologies.
                 </p>
                 <div class="cta-buttons">
                     <a href="#projects" class="btn btn-primary">
@@ -1219,15 +1320,10 @@
                                 Collaborated cross-functionally to develop a scalable, mobile-responsive Job Finance App aimed at streamlining business operations for invoicing, client tracking, and financial reporting.
                             </p>
                             <div class="project-tech">
-                                <span class="tech-tag"><i class="fab fa-react"></i>Expositiono</span>
+                                <span class="tech-tag"><i class="fab fa-react"></i>Expo</span>
                                 <span class="tech-tag"><i class="fas fa-fire"></i> Firebase</span>
                                 <span class="tech-tag"><i class="fab fa-js"></i> TypeScript</span>
                                 <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/aidenc17" class="project-link" target="_blank" rel="noopener">
-                                    <i class="fab fa-github"></i> GitHub
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -1260,7 +1356,7 @@
                                 <span class="tech-tag"><i class="fas fa-laptop-code"></i> CLion</span>
                             </div>
                             <div class="project-links">
-                                <a href="https://github.com/aidenc17" class="project-link" target="_blank" rel="noopener">
+                                <a href="https://github.com/aidenc17/HashTableProject" class="project-link" target="_blank" rel="noopener">
                                     <i class="fab fa-github"></i> GitHub
                                 </a>
                             </div>
@@ -1296,7 +1392,7 @@
                                 <span class="tech-tag"><i class="fas fa-puzzle-piece"></i> Swing</span>
                             </div>
                             <div class="project-links">
-                                <a href="https://github.com/aidenc17" class="project-link" target="_blank" rel="noopener">
+                                <a href="https://github.com/aidenc17/Reese-Invaders" class="project-link" target="_blank" rel="noopener">
                                     <i class="fab fa-github"></i> GitHub
                                 </a>
                             </div>
@@ -1312,13 +1408,13 @@
                 <div class="about-content reveal">
                     <h2>About Me</h2>
                     <p>
-                        I'm a passionate developer who loves turning ideas into reality through code.
-                        With a strong foundation in both frontend and backend technologies, I enjoy
-                        creating seamless user experiences backed by robust architecture.
+                        I'm a Software Developer at Booz Allen Hamilton with a focus on
+                        full-stack development and software engineering. I thrive on solving complex
+                        problems and building tools that streamline real-world workflows.
                     </p>
                     <p>
-                        When I'm not coding, you can find me exploring new technologies, taking long
-                        walks on the beach, or spending time with friends and family.
+                        My experience spans from automating data pipelines to developing mobile applications,
+                        always with an emphasis on clean architecture and maintainable code.
                     </p>
 
                     <!-- Skills by Category -->
@@ -1331,6 +1427,7 @@
                                 <span class="skill-tag"><i class="fas fa-code"></i> C++</span>
                                 <span class="skill-tag"><i class="fas fa-code"></i> Java</span>
                                 <span class="skill-tag"><i class="fas fa-code"></i> Kotlin</span>
+                                <span class="skill-tag"><i class="fas fa-code"></i> SQL</span>
                                 <span class="skill-tag"><i class="fas fa-code"></i> Bash</span>
                             </div>
                         </div>
@@ -1342,6 +1439,7 @@
                                 <span class="skill-tag"><i class="fas fa-fire"></i> Firebase</span>
                                 <span class="skill-tag"><i class="fas fa-chart-bar"></i> PowerBI</span>
                                 <span class="skill-tag"><i class="fas fa-code-branch"></i> Git</span>
+                                <span class="skill-tag"><i class="fas fa-robot"></i> TensorFlow</span>
                             </div>
                         </div>
                         <div class="skills-category">
@@ -1350,6 +1448,7 @@
                                 <span class="skill-tag"><i class="fab fa-linux"></i> Linux</span>
                                 <span class="skill-tag"><i class="fas fa-laptop-code"></i> VSCode</span>
                                 <span class="skill-tag"><i class="fas fa-file-excel"></i> VBA</span>
+                                <span class="skill-tag"><i class="fas fa-cloud"></i> AWS</span>
                             </div>
                         </div>
                     </div>
@@ -1359,14 +1458,90 @@
                     <div class="code-block">
                         <div class="code-content">
                             <div class="code-line"><span class="keyword">const</span> <span class="property">developer</span> <span class="bracket">=</span> <span class="bracket">{</span></div>
-                            <div class="code-line">&nbsp;&nbsp;<span class="property">name</span>: <span class="string">'Aiden'</span>,</div>
-                            <div class="code-line">&nbsp;&nbsp;<span class="property">skills</span>: <span class="bracket">[</span><span class="string">'TypeScript'</span>, <span class="string">'Python'</span>, <span class="string">'C++'</span><span class="bracket">]</span>,</div>
-                            <div class="code-line">&nbsp;&nbsp;<span class="property">passion</span>: <span class="string">'Building impactful software'</span>,</div>
-                            <div class="code-line">&nbsp;&nbsp;<span class="property">currentlyLearning</span>: <span class="string">'AI / ML'</span>,</div>
-                            <div class="code-line">&nbsp;&nbsp;<span class="property">caffeine</span>: <span class="keyword">true</span></div>
+                            <div class="code-line">&nbsp;&nbsp;<span class="property">name</span>: <span class="string">'Aiden Cox'</span>,</div>
+                            <div class="code-line">&nbsp;&nbsp;<span class="property">role</span>: <span class="string">'Software Developer'</span>,</div>
+                            <div class="code-line">&nbsp;&nbsp;<span class="property">education</span>: <span class="string">'Wright State University'</span>,</div>
+                            <div class="code-line">&nbsp;&nbsp;<span class="property">focus</span>: <span class="string">'Clean code & scalable systems'</span></div>
                             <div class="code-line"><span class="bracket">}</span>;</div>
                             <div class="code-line"></div>
-                            <div class="code-line"><span class="comment">// a winner is just a loser who tried one more time!</span></div>
+                            <div class="code-line"><span class="comment">// "First, solve the problem. Then, write the code."</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="timeline-section">
+            <div class="timeline-container">
+                <h2 class="section-title">Experience</h2>
+                <p class="section-subtitle">Professional roles that shaped my skills</p>
+
+                <div class="timeline-grid">
+                    <div class="timeline-card reveal">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">Data Analytics & Automation Intern</h3>
+                                <p class="timeline-company">Wright-Patt Credit Union</p>
+                            </div>
+                            <span class="timeline-date">May 2025 - December 2025</span>
+                        </div>
+                        <p class="timeline-description">
+                            Supported business operations by streamlining data workflows and automating repetitive tasks in Excel using VBA, resulting in increased efficiency and reduced errors. Developed and maintained interactive dashboards in PowerBI to visualize key performance indicators, trends, and actionable insights. Collaborated with team members to gather requirements, clean datasets, and deliver analytics solutions that informed strategic decisions.
+                        </p>
+                        <div class="timeline-skills">
+                            <span class="timeline-skill">Python</span>
+                            <span class="timeline-skill">PowerBI</span>
+                            <span class="timeline-skill">VBA</span>
+                            <span class="timeline-skill">SQL</span>
+                            <span class="timeline-skill">Data Automation</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-card reveal">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">Teaching Assistant</h3>
+                                <p class="timeline-company">Wright State University</p>
+                            </div>
+                            <span class="timeline-date">August 2024 - May 2026</span>
+                        </div>
+                        <p class="timeline-description">
+                            Lead a Lab of 40-50 students teaching core concepts of Computer Science. Duties included assisting students during the lab session by giving students one-on-one attention. Help grade and provide feedback on lab assignments. Holding two in-person office hours a week, and aided in monitoring questions and conversations in the Discord channel.
+                        </p>
+                        <div class="timeline-skills">
+                            <span class="timeline-skill">C++</span>
+                            <span class="timeline-skill">Mentorship</span>
+                            <span class="timeline-skill">Technical Communication</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="timeline-section education-section">
+            <div class="timeline-container">
+                <h2 class="section-title">Education</h2>
+                <p class="section-subtitle">Academic background and achievements</p>
+
+                <div class="timeline-grid">
+                    <div class="timeline-card reveal">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-title">B.S. Computer Science</h3>
+                                <p class="timeline-company">Wright State University</p>
+                            </div>
+                            <span class="timeline-date">May 2026</span>
+                        </div>
+                        <p class="timeline-description">
+                            Obtained a Bachelor of Science in Computer Science with coursework in software engineering, data structures, algorithms, and full-stack development. Actively applying classroom knowledge through hands-on projects and internship experience.
+                        </p>
+                        <div class="timeline-skills">
+                            <span class="timeline-skill">Software Engineering</span>
+                            <span class="timeline-skill">Algorithms</span>
+                            <span class="timeline-skill">Data Structures</span>
+                            <span class="timeline-skill">Database Systems</span>
                         </div>
                     </div>
                 </div>
@@ -1425,10 +1600,11 @@
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
                 <a href="#contact">Contact</a>
             </div>
             <p class="footer-text">
-                &copy; <span id="year"></span> Aiden Cox. Built with ❤️ and a substantial amount of Monster.
+                &copy; <span id="year"></span> Aiden Cox. Built with precision and purpose.
             </p>
         </div>
     </footer>
