@@ -2,9 +2,9 @@
    ambient.js — optional radar-room ambience, generated live
    with the Web Audio API (no audio files to host).
 
-   - a low equipment hum with a little air noise
-   - a faint tick each time the sweep paints a contact
-   - a sonar-style ping (with echo) when you click
+   - A low equipment hum with a little air noise
+   - A faint tick each time the sweep paints a contact
+   - A sonar-style ping (with echo) when you click
    ========================================================= */
 
 (() => {
@@ -47,7 +47,7 @@
     }
     hum.connect(master);
 
-    // air: quiet filtered noise
+    // Air: quiet filtered noise
     const len = ac.sampleRate * 3;
     const buf = ac.createBuffer(1, len, ac.sampleRate);
     const data = buf.getChannelData(0);
@@ -107,7 +107,42 @@
     btn.setAttribute('aria-label', on ? 'Turn ambient sound off' : 'Turn ambient sound on');
   }
 
-  btn.addEventListener('click', () => setOn(!on));
+  // ---------- On by default ----------
+  // Set SOUND_ON_BY_DEFAULT to false to go back to "off until you click the speaker".
+  const SOUND_ON_BY_DEFAULT = true;
+  const STORAGE_KEY = 'radar-sound';
+
+  // Remember the visitor's choice (wrapped in try: storage can be blocked)
+  const saved = (() => { try { return localStorage.getItem(STORAGE_KEY); } catch { return null; } })();
+  const save = (v) => { try { localStorage.setItem(STORAGE_KEY, v ? 'on' : 'off'); } catch { /* ignore */ } };
+  const wantsSound = saved ? saved === 'on' : SOUND_ON_BY_DEFAULT;
+
+  btn.addEventListener('click', () => {
+    // Toggle from what the button shows, not whether audio has started yet
+    const next = btn.getAttribute('aria-pressed') !== 'true';
+    setOn(next);
+    save(next);
+  });
+
+  if (wantsSound) {
+    // Show the speaker as "on" right away...
+    btn.setAttribute('aria-pressed', 'true');
+    btn.setAttribute('aria-label', 'Turn ambient sound off');
+
+    // ...but browsers only allow audio after a real interaction, so start
+    // it on the first click, tap or key press anywhere on the page.
+    // Capture phase so it runs before radar.js handles the click, which
+    // means the very first ping is audible too.
+    const unlock = (e) => {
+      if (e.target && e.target.closest && e.target.closest('#soundToggle')) return; // the button handles itself
+      remove();
+      if (btn.getAttribute('aria-pressed') === 'true') setOn(true);
+    };
+    const events = ['pointerdown', 'keydown', 'touchstart'];
+    const remove = () => events.forEach((ev) => window.removeEventListener(ev, unlock, true));
+    events.forEach((ev) => window.addEventListener(ev, unlock, { capture: true, passive: true }));
+  }
+
   window.addEventListener('radar:ping', ping);
   window.addEventListener('radar:paint', tick);
 })();
