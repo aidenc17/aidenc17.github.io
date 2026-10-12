@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#161616"/>
+  <text x="31" y="44" text-anchor="middle" font-family="Courier New, monospace" font-weight="700" font-size="34" fill="#ff3c3c" opacity=".7">A</text>
+  <text x="33" y="44" text-anchor="middle" font-family="Courier New, monospace" font-weight="700" font-size="34" fill="#3cdcff" opacity=".7">A</text>
+  <text x="32" y="44" text-anchor="middle" font-family="Courier New, monospace" font-weight="700" font-size="34" fill="#e9e4d8">A</text>
+</svg>
